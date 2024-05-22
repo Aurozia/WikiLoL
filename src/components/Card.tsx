@@ -18,7 +18,7 @@ export default function ChampionCard({ data }: Props) {
       }}
     >
       <Link
-        to={data.slug}
+        to={`/champion/${data.slug}`}
         className="absolute left-2 bottom-2 rounded-sm focus:outline focus:outline-offset-2 focus:outline-text focus:ring-0"
       >
         <p className="bg-text/50 text-primary hover:bg-primary/50 hover:text-text rounded-sm py-0.5 px-2">
