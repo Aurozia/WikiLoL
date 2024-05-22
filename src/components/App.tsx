@@ -1,9 +1,22 @@
-import Layout from "./Layout/Layout";
+import { Route, Routes } from "react-router-dom";
+
+import ChampionList from "./ChampionList";
+import Layout from "./Layout/Layout.tsx";
+// import RoleList from "./RoleList";
+// import TypeList from "./TypeList";
 
 export default function App() {
   return (
     <>
-      <Layout />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<ChampionList />} />
+          <Route path="/champion/:slug" element={<ChampionList />} />
+          {/* <Route path="/role/:slug" element={<roleData />} /> */}
+          {/* <Route path="/type/:slug" element={<typeData />} /> */}
+          {/* <Route path="*" element={<Error />} /> */}
+        </Route>
+      </Routes>
     </>
   );
 }
