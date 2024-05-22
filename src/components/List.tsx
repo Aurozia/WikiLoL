@@ -10,24 +10,43 @@ export default function List() {
     (champion) => champion.role?.slug === slug
   );
 
+  const filteredChampionsByTypeList = championData.filter(
+    (champion) => champion.type?.slug === slug
+  );
+  console.log(slug);
+
   return (
     <>
-      <h2 className="font-medium text-xl text-center mb-10">
+      <h2 className="font-medium text-xl text-center mt-5 mb-10">
         Liste des{" "}
-        {location.pathname.includes("champions")
-          ? "champions"
-          : location.pathname.includes("roles")
-          ? "rôles"
-          : "types"}
+        {location.pathname === "/roles" ? (
+          "rôles"
+        ) : location.pathname.includes("/roles/") ? (
+          <>
+            champions avec le rôle{" "}
+            <span className="underline underline-offset-4">{slug}</span>
+          </>
+        ) : location.pathname === "/types" ? (
+          "types"
+        ) : location.pathname.includes("/types/") ? (
+          <>
+            champions avec le type{" "}
+            <span className="underline underline-offset-4">{slug}</span>
+          </>
+        ) : (
+          "champions"
+        )}
       </h2>
       <ul className="flex flex-wrap -m-2">
-        {(location.pathname.includes("champions")
-          ? championData
-          : location.pathname === "/roles"
+        {(location.pathname === "/roles"
           ? roleData
           : location.pathname.includes("/roles/")
           ? filteredChampionsByRoleList
-          : typeData
+          : location.pathname === "/types"
+          ? typeData
+          : location.pathname.includes("/types/")
+          ? filteredChampionsByTypeList
+          : championData
         ).map((data) => (
           <li
             key={data.id}

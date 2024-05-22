@@ -16,6 +16,8 @@ export default function App() {
           <Route path="/champions/:slug" element={<Item />} />
           <Route path="/roles" element={<List />} />
           <Route path="/roles/:slug" element={<List />} />
+          <Route path="/types" element={<List />} />
+          <Route path="/types/:slug" element={<List />} />
         </Route>
       </Routes>
     </>
