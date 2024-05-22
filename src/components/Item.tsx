@@ -25,30 +25,28 @@ export default function ChampionItem() {
               <span className="ml-4 text-sm text-hover">{champion.alias}</span>
             </h3>
 
-            <p className="data-champion-date">
-              Date de sortie : {champion.release_date}
-            </p>
+            <p>Date de sortie : {champion.release_date}</p>
           </section>
 
           <section className="flex items-center gap-10">
-            <Link to={`/role/${champion.role?.slug}`}>
+            <Link to={`/roles/${champion.role?.slug}`}>
               <article className="flex flex-col items-center gap-0.5">
                 <img
                   className="w-[25px]"
                   src={`${champion.role?.picture}`}
                   alt={`Role ${champion.role?.name}`}
                 />
-                <p className="data-champion-info">{champion.role?.name}</p>
+                <p>{champion.role?.name}</p>
               </article>
             </Link>
-            <Link to={`/type/${champion.type?.slug}`}>
+            <Link to={`/types/${champion.type?.slug}`}>
               <article className="flex flex-col items-center gap-0.5">
                 <img
                   className="w-[25px]"
                   src={`${champion.type?.picture}`}
                   alt={`Type ${champion.type?.name}`}
                 />
-                <p className="data-champion-info">{champion.type?.name}</p>
+                <p>{champion.type?.name}</p>
               </article>
             </Link>
           </section>

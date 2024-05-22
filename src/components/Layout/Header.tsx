@@ -74,7 +74,7 @@ export default function Header() {
               {championData.map((champion) => (
                 <li key={champion.id}>
                   <Link
-                    to={`/${champion.slug}`}
+                    to={`/champions/${champion.slug}`}
                     className="block text-primary hover:bg-primary/90 hover:text-text p-2 rounded-sm"
                     onClick={() => setOpenChampionList(false)}
                   >
@@ -112,7 +112,7 @@ export default function Header() {
               {roleData.map((role) => (
                 <li key={role.id}>
                   <Link
-                    to={`/${role.slug}`}
+                    to={`/roles/${role.slug}`}
                     className="block text-primary hover:bg-primary/90 hover:text-text p-2 rounded-sm"
                     onClick={() => setOpenRoleList(false)}
                   >
@@ -150,7 +150,7 @@ export default function Header() {
               {typeData.map((type) => (
                 <li key={type.id}>
                   <Link
-                    to={`/${type.slug}`}
+                    to={`/types/${type.slug}`}
                     className="block text-primary hover:bg-primary/90 hover:text-text p-2 rounded-sm"
                     onClick={() => setOpenTypeList(false)}
                   >
