@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
+import Error from "./Error.tsx";
 import Home from "./Home.tsx";
 import Item from "./Item.tsx";
 import Layout from "./Layout/Layout.tsx";
@@ -10,6 +11,7 @@ export default function App() {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="*" element={<Error />} />
 
         <Route element={<Layout />}>
           <Route path="/champions" element={<List />} />
