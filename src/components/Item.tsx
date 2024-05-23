@@ -17,8 +17,8 @@ export default function ChampionItem() {
         src={`${champion.picture}`}
         alt={`League of Legends Champion ${champion.name}`}
       />
-      <div className="bg-text/30 rounded-sm p-4 space-y-4">
-        <div className="flex justify-between items-start">
+      <div className="bg-text/30 rounded-sm p-4 space-y-6">
+        <div className="flex max-xs:flex-col max-xs:gap-6 xs:justify-between xs:items-start">
           <section className="space-y-1">
             <h3>
               {champion.name},
@@ -28,8 +28,11 @@ export default function ChampionItem() {
             <p>Date de sortie : {champion.release_date}</p>
           </section>
 
-          <section className="flex items-center gap-10">
-            <Link to={`/roles/${champion.role?.slug}`}>
+          <section className="flex max-xs:justify-center items-center gap-10">
+            <Link
+              to={`/roles/${champion.role?.slug}`}
+              className="active:border-0 active:outline-none active:ring-0 focus:outline focus:outline-offset-[3px] focus:outline-text focus:ring-0 rounded-sm"
+            >
               <article className="flex flex-col items-center gap-0.5">
                 <img
                   className="w-[25px]"
@@ -39,7 +42,10 @@ export default function ChampionItem() {
                 <p>{champion.role?.name}</p>
               </article>
             </Link>
-            <Link to={`/types/${champion.type?.slug}`}>
+            <Link
+              to={`/types/${champion.type?.slug}`}
+              className="active:border-0 active:outline-none active:ring-0 focus:outline focus:outline-offset-[3px] focus:outline-text focus:ring-0 rounded-sm"
+            >
               <article className="flex flex-col items-center gap-0.5">
                 <img
                   className="w-[25px]"

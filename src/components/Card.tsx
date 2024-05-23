@@ -31,7 +31,7 @@ export default function ChampionCard({ data }: Props) {
         }
         className={`${
           data.picture.includes("champions") ? "absolute left-2 bottom-2" : ""
-        } rounded-sm active:border-0 active:outline-none active:ring-0 focus:outline focus:outline-offset-2 focus:outline-text focus:ring-0`}
+        } rounded-sm active:border-0 active:outline-none active:ring-0 focus:outline focus:outline-offset-[3px] focus:outline-text focus:ring-0`}
       >
         <p
           className={`bg-text/50 text-primary ${

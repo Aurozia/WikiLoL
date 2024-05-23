@@ -13,7 +13,6 @@ export default function List() {
   const filteredChampionsByTypeList = championData.filter(
     (champion) => champion.type?.slug === slug
   );
-  console.log(slug);
 
   return (
     <>
@@ -24,20 +23,20 @@ export default function List() {
         ) : location.pathname.includes("/roles/") ? (
           <>
             champions avec le rôle{" "}
-            <span className="underline underline-offset-4">{slug}</span>
+            <span className="underline underline-offset-[3px]">{slug}</span>
           </>
         ) : location.pathname === "/types" ? (
           "types"
         ) : location.pathname.includes("/types/") ? (
           <>
             champions avec le type{" "}
-            <span className="underline underline-offset-4">{slug}</span>
+            <span className="underline underline-offset-[3px]">{slug}</span>
           </>
         ) : (
           "champions"
         )}
       </h2>
-      <ul className="flex flex-wrap -m-2">
+      <ul className="flex flex-wrap md:-m-2">
         {(location.pathname === "/roles"
           ? roleData
           : location.pathname.includes("/roles/")
@@ -50,11 +49,11 @@ export default function List() {
         ).map((data) => (
           <li
             key={data.id}
-            className={`${
+            className={
               location.pathname !== "/roles" && location.pathname !== "/types"
-                ? "w-1/4"
-                : "w-1/3"
-            } p-2`}
+                ? "w-1/2 xs:w-1/3 md:w-1/4 p-2"
+                : "w-1/2 sm:w-1/3 p-4"
+            }
           >
             <Card data={data} />
           </li>

@@ -5,10 +5,10 @@ import Header from "./Header.tsx";
 
 export default function Layout() {
   return (
-    <div className="bg-gradient-to-r from-secondary to-primary font-rubik text-text overflow-y-hidden">
-      <div className="max-w-[800px] px-4 min-h-screen flex flex-col mx-auto">
+    <div className="bg-gradient-to-r from-secondary to-primary font-rubik text-text">
+      <div className="max-w-[800px] min-h-screen flex flex-col md:mx-auto">
         <Header />
-        <main className="flex-1">
+        <main className="flex-1 px-4 transition duration-500">
           <Outlet />
         </main>
         <Footer />
